@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>R2ロボコンテストサイト</title>
+</head>
+<body>
+	<h1>R2ロボコンテストサイト</h1>	
+	<p>サンプル:50Hzが再生されます。</p>
+	<!-- ボタンの設置 -->
+	 <input type="button" value="左旋回" onclick="ring1()">
+	 <input type="button" value="前進" onclick="ring2()">
+	 <input type="button" value="右旋回" onclick="ring3()">
+	 <input type="button" value="ブレーキ" onclick="ring4()">
+	<!-- 音声ファイルの読み込み -->
+	<audio id="play1">
+	  <source src= "audio/RIGHT.mp3" type="audio/mp3">
+</audio>
+	<audio id="play2">
+	  <source src= "audio/LEFT.mp3" type="audio/mp3">
+</audio>
+	
+	<script type="text/javascript">
+	let value1 = 0;
+  function ring1(){
+    document.getElementById("play1").load();
+    document.getElementById("play1").play();
+    document.getElementById("play2").pause();
+  }
+  function ring2(){
+    document.getElementById("play2").load();
+    document.getElementById("play2").play();
+    document.getElementById("play1").pause();
+  }
+  function ring3(){
+    document.getElementById("play1").load();
+    document.getElementById("play1").play();
+    document.getElementById("play2").load();
+    document.getElementById("play2").play();
+  }
+  function ring4(){
+    document.getElementById("play1").pause();
+    document.getElementById("play2").pause();
+  }
+</script>
+</body>
+</html>
